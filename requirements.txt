@@ -1,0 +1,11 @@
+# LangGraph Research Assistant - Dependencies
+# ============================================
+
+# LangGraph - The core framework for building stateful, multi-step AI workflows
+langgraph>=0.2.0
+
+# LangChain Hugging Face - Integration with Hugging Face models
+langchain-huggingface>=0.1.0
+
+# Python-dotenv - Load environment variables from .env file
+python-dotenv>=1.0.0
