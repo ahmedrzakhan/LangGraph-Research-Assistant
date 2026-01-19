@@ -9,3 +9,13 @@ langchain-huggingface>=0.1.0
 
 # Python-dotenv - Load environment variables from .env file
 python-dotenv>=1.0.0
+
+# =============================================================================
+# MCP (Model Context Protocol) Dependencies
+# =============================================================================
+# MCP - Official Anthropic SDK for Model Context Protocol
+# Enables standardized LLM-tool integration
+mcp[cli]>=1.0.0
+
+# HTTPX - Modern async HTTP client for MCP communication
+httpx>=0.27.0
