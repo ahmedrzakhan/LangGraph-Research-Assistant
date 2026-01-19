@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "research-tools": {
+      "command": "python",
+      "args": ["mcp_server.py"],
+      "description": "MCP server providing research tools for the LangGraph Research Assistant",
+      "tools": [
+        {
+          "name": "web_search",
+          "description": "Search the web for information about a query",
+          "enabled": true
+        },
+        {
+          "name": "get_facts",
+          "description": "Get curated facts about a specific topic",
+          "enabled": true
+        },
+        {
+          "name": "validate_claim",
+          "description": "Validate whether a claim seems reasonable",
+          "enabled": true
+        }
+      ],
+      "env": {},
+      "timeout": 30000
+    }
+  },
+  "settings": {
+    "enableMcp": true,
+    "logLevel": "info",
+    "retryAttempts": 3,
+    "connectionTimeout": 5000
+  }
+}
