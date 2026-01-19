@@ -8,15 +8,15 @@ A simple research assistant built with LangGraph that demonstrates core concepts
 
 This project showcases the following concepts:
 
-| Concept | Implementation |
-|---------|---------------|
-| **State Management** | `ResearchState` TypedDict defining shared state |
-| **Node Functions** | `planner_node`, `researcher_node`, `summarizer_node` |
-| **Graph Construction** | `StateGraph` with nodes and edges |
-| **Conditional Edges** | `should_continue` function for dynamic routing |
-| **Graph Compilation** | `workflow.compile()` for execution |
-| **Visualization** | `get_graph().draw_mermaid()` for diagram generation |
-| **MCP Integration** | Official MCP SDK (`mcp` package) for standardized tool access (NEW) |
+| Concept                | Implementation                                                      |
+| ---------------------- | ------------------------------------------------------------------- |
+| **State Management**   | `ResearchState` TypedDict defining shared state                     |
+| **Node Functions**     | `planner_node`, `researcher_node`, `summarizer_node`                |
+| **Graph Construction** | `StateGraph` with nodes and edges                                   |
+| **Conditional Edges**  | `should_continue` function for dynamic routing                      |
+| **Graph Compilation**  | `workflow.compile()` for execution                                  |
+| **Visualization**      | `get_graph().draw_mermaid()` for diagram generation                 |
+| **MCP Integration**    | Official MCP SDK (`mcp` package) for standardized tool access (NEW) |
 
 ---
 
@@ -28,12 +28,12 @@ MCP is a **standardized protocol** developed by Anthropic that enables LLMs to i
 
 Think of MCP as a **"USB standard for AI tools"**:
 
-| Problem | MCP Solution |
-|---------|-------------|
-| Every LLM app reimplements the same tools | Write once, use everywhere |
-| Tools are tightly coupled to applications | Tools are independent servers |
-| No standard for tool interfaces | JSON-RPC based standard protocol |
-| Hard to share tools across projects | Any MCP client works with any MCP server |
+| Problem                                   | MCP Solution                             |
+| ----------------------------------------- | ---------------------------------------- |
+| Every LLM app reimplements the same tools | Write once, use everywhere               |
+| Tools are tightly coupled to applications | Tools are independent servers            |
+| No standard for tool interfaces           | JSON-RPC based standard protocol         |
+| Hard to share tools across projects       | Any MCP client works with any MCP server |
 
 ### How It Works
 
@@ -112,6 +112,7 @@ python research_agent.py --mcp
 ```
 
 When running with `--mcp`, the agent will:
+
 1. Spawn the MCP server as a subprocess
 2. Connect and discover available tools
 3. Use MCP tools during the research phase
@@ -121,11 +122,11 @@ When running with `--mcp`, the agent will:
 
 ## MCP Tools Available
 
-| Tool | Description | Input | Output |
-|------|-------------|-------|--------|
-| `web_search` | Search the web for information | `query: str` | Search results with titles, snippets, sources |
-| `get_facts` | Get curated facts about a topic | `topic: str` | List of verified facts |
-| `validate_claim` | Check if a claim is reasonable | `claim: str` | Assessment with confidence score |
+| Tool             | Description                     | Input        | Output                                        |
+| ---------------- | ------------------------------- | ------------ | --------------------------------------------- |
+| `web_search`     | Search the web for information  | `query: str` | Search results with titles, snippets, sources |
+| `get_facts`      | Get curated facts about a topic | `topic: str` | List of verified facts                        |
+| `validate_claim` | Check if a claim is reasonable  | `claim: str` | Assessment with confidence score              |
 
 ---
 
@@ -308,9 +309,9 @@ Edit `mcp_config.json` to customize MCP behavior:
       "command": "python",
       "args": ["mcp_server.py"],
       "tools": [
-        {"name": "web_search", "enabled": true},
-        {"name": "get_facts", "enabled": true},
-        {"name": "validate_claim", "enabled": true}
+        { "name": "web_search", "enabled": true },
+        { "name": "get_facts", "enabled": true },
+        { "name": "validate_claim", "enabled": true }
       ]
     }
   }
@@ -336,6 +337,7 @@ Edit `mcp_config.json` to customize MCP behavior:
 ## Extending This Project
 
 Ideas for enhancement:
+
 - Add more MCP tools (database queries, API calls, file operations)
 - Implement HTTP/SSE transport for remote MCP servers
 - Add authentication to MCP server
@@ -343,7 +345,3 @@ Ideas for enhancement:
 - Add caching layer for MCP responses
 
 ---
-
-## License
-
-MIT
